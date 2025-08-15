@@ -1,0 +1,9 @@
+.DS_Store
+
+/src/models/
+/src/data/
+
+./data/
+./logs/
+
+src/data/cifar-10-python.tar.gz

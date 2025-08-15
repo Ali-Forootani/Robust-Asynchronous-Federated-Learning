@@ -1,0 +1,50 @@
+Pole Latitude: 39.25
+Pole Longitude: -162.0
+Shape of extracted wind speed: (2928, 28574)
+Sample of extracted wind speed (first 5 time steps, first 5 locations):
+Number of rows where all values from column 5 onwards are zero: 171
+Shape of repeated_scaled_target_points: (679296, 2)
+Federated Rounds:   0%|          | 0/100 [00:00<?, ?it/s]Federated Rounds:   0%|          | 0/100 [00:06<?, ?it/s]
+
+Starting federated learning round 1/100
+Selected clients for round 1: [1, 3, 0, 2]
+Round 1 - Maximum delay: 4.45s
+Model saved at: models/round_1/server_model_cpu.pth
+Model saved at: models/round_1/client_1_model_cpu.pth
+Model saved at: models/round_1/client_2_model_cpu.pth
+Model saved at: models/round_1/client_3_model_cpu.pth
+Model saved at: models/round_1/client_4_model_cpu.pth
+Traceback (most recent call last):
+  File "/data/bio-eng-llm/AFL_non_convex/src/training_wind_psr_lstm_fl_async_strictly_convex_random_selection_complete_2.py", line 450, in <module>
+    asyncio.run(main())
+  File "/gpfs1/data/bio-eng-llm/virtual_envs/dnn_env/lib/python3.10/site-packages/nest_asyncio.py", line 30, in run
+    return loop.run_until_complete(task)
+  File "/gpfs1/data/bio-eng-llm/virtual_envs/dnn_env/lib/python3.10/site-packages/nest_asyncio.py", line 98, in run_until_complete
+    return f.result()
+  File "/data/bio-eng-llm/miniconda3/envs/gnsindy_3/lib/python3.10/asyncio/futures.py", line 201, in result
+    raise self._exception.with_traceback(self._exception_tb)
+  File "/data/bio-eng-llm/miniconda3/envs/gnsindy_3/lib/python3.10/asyncio/tasks.py", line 232, in __step
+    result = coro.send(None)
+  File "/data/bio-eng-llm/AFL_non_convex/src/training_wind_psr_lstm_fl_async_strictly_convex_random_selection_complete_2.py", line 353, in main
+    ) = await federated_learning_with_balanced_client_selection_and_delay_tracking_5(
+  File "/gpfs1/data/bio-eng-llm/AFL_non_convex/src/wind_trainer.py", line 3557, in federated_learning_with_balanced_client_selection_and_delay_tracking_5
+    outputs = server_model(inputs)
+  File "/gpfs1/data/bio-eng-llm/virtual_envs/dnn_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/gpfs1/data/bio-eng-llm/virtual_envs/dnn_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/gpfs1/data/bio-eng-llm/AFL_non_convex/src/wind_deep_simulation_framework.py", line 479, in forward
+    x, (hidden_state, cell_state) = lstm_layer(x)
+  File "/gpfs1/data/bio-eng-llm/virtual_envs/dnn_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/gpfs1/data/bio-eng-llm/virtual_envs/dnn_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/gpfs1/data/bio-eng-llm/AFL_non_convex/src/wind_deep_simulation_framework.py", line 538, in forward
+    output, (hidden, cell) = self.lstm(x)
+  File "/gpfs1/data/bio-eng-llm/virtual_envs/dnn_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/gpfs1/data/bio-eng-llm/virtual_envs/dnn_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/gpfs1/data/bio-eng-llm/virtual_envs/dnn_env/lib/python3.10/site-packages/torch/nn/modules/rnn.py", line 917, in forward
+    result = _VF.lstm(input, hx, self._flat_weights, self.bias, self.num_layers,
+RuntimeError: Input and parameter tensors are not at the same device, found input tensor at cuda:0 and parameter tensor at cpu

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/data/bio-eng-llm/AFL_non_convex/src/training_wind_psr_lstm_fl_async_strictly_convex_random_selection_complete_2.py", line 138, in <module>
+    pressure_data, grid_lats, grid_lons = extract_pressure_for_germany(nc_file_path)
+  File "/gpfs1/data/bio-eng-llm/AFL_non_convex/src/wind_dataset_preparation_psr.py", line 186, in extract_pressure_for_germany
+    with Dataset(nc_file, 'r') as nc:
+  File "src/netCDF4/_netCDF4.pyx", line 2470, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 2107, in netCDF4._netCDF4._ensure_nc_success
+FileNotFoundError: [Errno 2] No such file or directory: '/gpfs1/data/bio-eng-llm/nc_files/dataset-projections-2020/ps_EUR-11_MPI-M-MPI-ESM-LR_rcp85_r3i1p1_GERICS-REMO2015_v1_3hr_202001010100-202012312200.nc'
