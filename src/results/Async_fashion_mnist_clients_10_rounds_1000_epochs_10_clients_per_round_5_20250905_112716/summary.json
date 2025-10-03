@@ -1,0 +1,12 @@
+{
+  "dataset": "fashion_mnist",
+  "num_clients": 10,
+  "num_clients_per_round": 5,
+  "num_rounds": 1000,
+  "local_epochs": 10,
+  "non_iid_alpha": 0.5,
+  "delay_t": 2,
+  "accuracy_final": 0.1029,
+  "best_accuracy": 0.2391,
+  "total_runtime_sec": 37198.125746011734
+}

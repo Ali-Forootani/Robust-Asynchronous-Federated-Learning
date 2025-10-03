@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=my_federated_rl
+#SBATCH --job-name=my_rafl_cifar
 #SBATCH --time=0-40:30:00
 #SBATCH --gres=gpu:nvidia-a100:1
 #SBATCH --mem-per-cpu=32G
@@ -14,5 +14,5 @@
 source /data/bio-eng-llm/virtual_envs/dnn_env/bin/activate
 
 # Execute the Python script
-python /data/bio-eng-llm/Robust_AFL_non_convex/src/robust_async_fdl_cifar_delay_track_lr_non_iid.py
+python /data/bio-eng-llm/Robust_AFL_non_convex/src/robust_async_fdl_cifar_delay_track_lr_non_iid_10.py
 

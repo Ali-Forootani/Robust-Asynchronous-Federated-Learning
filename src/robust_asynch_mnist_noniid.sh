@@ -14,5 +14,5 @@
 source /data/bio-eng-llm/virtual_envs/dnn_env/bin/activate
 
 # Execute the Python script
-python /data/bio-eng-llm/Robust_AFL_non_convex/src/robust_async_fdl_mnist_delay_track_lr_non_iid.py
+python /data/bio-eng-llm/Robust_AFL_non_convex/src/robust_async_fdl_mnist_delay_track_lr_non_iid_10.py
 
