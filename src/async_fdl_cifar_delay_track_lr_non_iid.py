@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Robust Asynchronous Federated Learning (RAFL) on CIFAR-10
+Asynchronous Federated Learning (AFL) on CIFAR-10
 with round-wise test evaluation and heterogeneity proxy ν̂_t^2.
 
 THIS VERSION: identical algorithm & hyperparameters.
