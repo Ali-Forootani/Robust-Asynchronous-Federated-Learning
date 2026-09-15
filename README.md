@@ -230,6 +230,10 @@ These match the analysis quantities used in the manuscript’s lemmas/recursions
 * **§III Problem Formulation:** async client updates, ET and Byzantine challenges, server rule ( \theta^{t+1}=\theta^t+\gamma_t \hat u^t ).
 * **§IV Convergence Analysis:** weighted-sampling variance bound, one-step descent, refined drift, and delay/ET-aware stepsize schedule with sublinear rates and bounded floors.
 * **§V Experiments:** MNIST, Fashion-MNIST, CIFAR-10 under heterogeneity and adversaries; RAFL vs AFL vs robust baselines.
+* The convergence analysis in Sections II--IV is developed for local SGD; the use of Adam
+in the empirical implementation is an optimization choice
+for the experimental evaluation and is not used in deriving
+the theoretical guarantees.
 
 ---
 
