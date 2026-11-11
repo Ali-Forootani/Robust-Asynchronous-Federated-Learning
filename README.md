@@ -222,6 +222,65 @@ These match the analysis quantities used in the manuscript’s lemmas/recursions
 └── __pycache__/ ...
 ```
 
+
+
+## UCI HAR: Robust Asynchronous Federated Learning
+
+This experiment evaluates **Robust Asynchronous Federated Learning
+(RAFL)** on the [UCI Human Activity Recognition (HAR) dataset](https://archive.ics.uci.edu/dataset/240/human+activity+recognition+using+smartphones).
+
+The dataset contains **10,299 observations** collected from 30
+volunteers performing six daily activities using smartphone
+accelerometer and gyroscope sensors. Each observation is represented
+by 561 extracted features.
+
+### Experimental Setup
+
+- **Model:** MLP (561–256–128–6), with ReLU activations.
+- **Federated clients:** 10, with 5 participating per round.
+- **Data heterogeneity:** Non-IID Dirichlet partitioning (α = 0.5).
+- **Training:** 500 communication rounds, 3 local epochs, batch size 128.
+- **Optimizer:** Adam, learning rate 0.01.
+- **Maximum staleness:** 3 rounds.
+- **Byzantine setting:** Configured fraction 0.3 (one malicious client among five selected clients).
+- **Attack scenarios:** Gaussian corruption, label flipping, model replacement, and sign flipping.
+- **Baselines:** FedAsync, FedBuff, Mean, Median, Trimmed Mean, Krum, AFLGuard-style, and Zeno-style aggregation.
+- **Random seeds:** 12, 17, 44, 122, 1254.
+
+The experimental design comprises **65 independent runs**:
+25 attack-robustness experiments and 40 baseline comparisons.
+
+### Execution
+
+The experiments are implemented in:
+
+- `rafl_uci_har_experiment_suite.py`
+- `rafl_uci_har_5seed.sh`
+
+After downloading the UCI HAR dataset and configuring the HPC
+paths, submit the experiments using:
+
+```bash
+sbatch rafl_uci_har_5seed.sh
+```
+
+### Evaluation
+
+Results include final test accuracy, test loss, computational
+runtime, and communication statistics, reported across five seeds.
+
+The experiments assess RAFL's robustness to Byzantine attacks
+in sensor-based federated learning. Asynchronous behavior is
+represented through bounded model staleness rather than
+physical network deployment.
+
+
+
+
+
+
+
+
 ---
 
 ## Paper organization (helpful for readers of the code & paper)
